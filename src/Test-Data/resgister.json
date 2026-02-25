@@ -1,0 +1,7 @@
+{
+    "register_user":{
+        "email":"testing@gmail.com",
+        "password":"Testing@123",
+        "confirm_password":"Testing@123"
+    }
+}
