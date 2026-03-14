@@ -11,3 +11,9 @@ Feature: User Registration
     When I go to the register page
     And I try to register with email "negative@test.com" password "Testing@123" and confirm password "WrongPass@1"
     Then I should see error message "Passwords do not match"
+
+  Scenario: Registration fails when email is already registered
+    Given I am on the login page
+    When I go to the register page
+    And I try to register with existing email "testing@gmail.com"
+    Then I should see error message "Email already registered"

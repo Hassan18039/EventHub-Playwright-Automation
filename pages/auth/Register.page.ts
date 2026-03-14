@@ -8,7 +8,7 @@ export class RegisterPage {
   readonly createAccountBtn: Locator;
   readonly logOutBtn: Locator;
   readonly passwordMismatchError: Locator;
-
+  readonly emailAlreadyRegisteredError: Locator;
   constructor(page: Page) {
     this.page = page;
     this.emailInput = page.getByRole('textbox', { name: 'you@email.com' });
@@ -17,11 +17,12 @@ export class RegisterPage {
     this.createAccountBtn = page.getByRole('button', { name: 'Create Account' });
     this.logOutBtn = page.getByRole('button', { name: 'Logout' });
     this.passwordMismatchError = page.getByText('Password do not match');
-  }
+    this.emailAlreadyRegisteredError = page.getByText('Email already registered');
+}
 
-  /** Error message that appears below the form / input fields (uses text from test data). */
-  getErrorBelowField(message: string): Locator {
-    return this.page.locator('form').getByText(message);
+  /** Error message – in form or in toast (e.g. relative overflow-hidden container). */
+  getErrorLocator(message: string): Locator {
+    return this.page.getByText(message);
   }
 
   async fillEmail(email: string) {
@@ -43,6 +44,7 @@ export class RegisterPage {
 
   async clickCreateAccountBtnOnly() {
     await this.createAccountBtn.click();
+    await this.page.waitForTimeout(1000);
   }
 
   async checkPasswordMismatchError() {
@@ -51,5 +53,9 @@ export class RegisterPage {
 
   async checkPasswordMismatchErrorMessage(errorMessage: string) {
     await expect(this.passwordMismatchError).toHaveText(errorMessage, { ignoreCase: true });
+  }
+
+  async checkEmailAlreadyRegisteredErrorText(errorMessage: string) {
+    await expect(this.emailAlreadyRegisteredError).toHaveText(errorMessage, { ignoreCase: true });
   }
 }
