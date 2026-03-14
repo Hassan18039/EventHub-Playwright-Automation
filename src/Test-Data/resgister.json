@@ -1,7 +1,12 @@
 {
-    "register_user":{
-        "email":"testing@gmail.com",
-        "password":"Testing@123",
-        "confirm_password":"Testing@123"
-    }
+  "register_user": {
+    "email": "testing@gmail.com",
+    "password": "Testing@123",
+    "confirm_password": "Testing@123"
+  },
+  "register_user_negative": {
+    "email": "negative@test.com",
+    "password": "Testing@123",
+    "confirm_password": "WrongPass@1"
+  }
 }

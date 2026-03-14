@@ -34,6 +34,10 @@ export class RegisterPage {
         await this.createAccountBtn.click();
         await expect(this.logOutBtn).toBeVisible();
     }
+
+    async clickCreateAccountBtnOnly() {
+        await this.createAccountBtn.click();
+    }
     async clickLogOutBtn() {
         await expect(this.logOutBtn).toBeVisible();
     }
