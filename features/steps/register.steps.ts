@@ -1,23 +1,16 @@
-import { test } from 'playwright-bdd';
-import { createBdd } from 'playwright-bdd';
 import { expect } from '@playwright/test';
-import { LoginPage } from '../../src/Pages/Auth/Login';
-import { RegisterPage } from '../../src/Pages/Auth/Register';
+import { Given, When, Then } from './fixtures';
 
-const { Given, When, Then } = createBdd(test);
-
-Given('I am on the login page', async ({ page }) => {
-  const loginPage = new LoginPage(page);
-  await loginPage.navigate();
+Given('I am on the login page', async ({ pageObjects }) => {
+  await pageObjects.loginPage.navigate();
 });
 
-When('I go to the register page', async ({ page }) => {
-  const loginPage = new LoginPage(page);
-  await loginPage.clickRegisterBtn();
+When('I go to the register page', async ({ pageObjects }) => {
+  await pageObjects.loginPage.clickRegisterBtn();
 });
 
-When('I register with email {string} and password {string}', async ({ page }, email, password) => {
-  const registerPage = new RegisterPage(page);
+When('I register with email {string} and password {string}', async ({ pageObjects }, email, password) => {
+  const { registerPage } = pageObjects;
   const uniqueEmail = email.replace('@', `+${Date.now()}@`);
   await registerPage.fillEmail(uniqueEmail);
   await registerPage.fillPassword(password);
