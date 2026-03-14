@@ -7,6 +7,7 @@
   "register_user_negative": {
     "email": "negative@test.com",
     "password": "Testing@123",
-    "confirm_password": "WrongPass@1"
+    "confirm_password": "WrongPass@1",
+    "expected_error": "Passwords do not match"
   }
 }

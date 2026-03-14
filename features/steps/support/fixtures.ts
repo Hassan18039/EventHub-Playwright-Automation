@@ -1,10 +1,8 @@
 import { test as base } from 'playwright-bdd';
 import { createBdd } from 'playwright-bdd';
-import { LoginPage } from '../../src/Pages/Auth/Login';
-import { RegisterPage } from '../../src/Pages/Auth/Register';
+import { LoginPage } from '../../../pages/auth/Login.page';
+import { RegisterPage } from '../../../pages/auth/Register.page';
 
-// One place to add pages – like beforeEach in simple Playwright, but as a fixture
-// (beforeEach can't be used in step files – they're loaded at generation time)
 type PageObjects = {
   loginPage: LoginPage;
   registerPage: RegisterPage;

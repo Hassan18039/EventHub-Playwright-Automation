@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import { Given, When, Then } from '../../src/Fixtures/Fixture';
+import { Given, When, Then } from '../support/fixtures';
 
 Given('I am on the login page', async ({ pageObjects }) => {
   await pageObjects.loginPage.navigate();
@@ -17,6 +17,10 @@ When('I register with email {string} and password {string}', async ({ pageObject
   await pageObjects.registerPage.clickCreateAccountBtn();
 });
 
+Then('I am logged in and see the logout button', async ({ page }) => {
+  await expect(page.getByRole('button', { name: 'Logout' })).toBeVisible();
+});
+
 When('I try to register with email {string} password {string} and confirm password {string}', async ({ pageObjects }, email, password, confirmPassword) => {
   await pageObjects.registerPage.fillEmail(email);
   await pageObjects.registerPage.fillPassword(password);
@@ -24,10 +28,6 @@ When('I try to register with email {string} password {string} and confirm passwo
   await pageObjects.registerPage.clickCreateAccountBtnOnly();
 });
 
-Then('I am logged in and see the logout button', async ({ page }) => {
-  await expect(page.getByRole('button', { name: 'Logout' })).toBeVisible();
-});
-
-Then('I should remain on the register page', async ({ page }) => {
-  await expect(page).toHaveURL(/register/);
+Then('I should see error message {string}', async ({ pageObjects }, errorMessage) => {
+  await expect(pageObjects.registerPage.getErrorBelowField(errorMessage)).toBeVisible();
 });
