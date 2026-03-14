@@ -1,4 +1,5 @@
 node_modules/
 playwright-report/
+.features-gen/
 .env
 .DS_Store
