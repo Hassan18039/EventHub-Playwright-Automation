@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import { Given, When, Then } from './fixtures';
+import { Given, When, Then } from '../../src/Fixtures/Fixture';
 
 Given('I am on the login page', async ({ pageObjects }) => {
   await pageObjects.loginPage.navigate();

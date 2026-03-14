@@ -8,6 +8,7 @@ export class RegisterPage {
     readonly createAccountBtn : Locator;
     readonly logOutBtn : Locator;
 
+
     constructor(page: Page) {
         this.page = page;
         this.emailInput = page.getByRole('textbox', { name: 'you@email.com' });
@@ -33,5 +34,7 @@ export class RegisterPage {
         await this.createAccountBtn.click();
         await expect(this.logOutBtn).toBeVisible();
     }
- 
+    async clickLogOutBtn() {
+        await expect(this.logOutBtn).toBeVisible();
+    }
 }

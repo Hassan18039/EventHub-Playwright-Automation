@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
-    "test:ui": "playwright test --ui",
-    "test:bdd": "bddgen -c playwright.bdd.config.ts && playwright test -c playwright.bdd.config.ts",
-    "test:bdd:ui": "bddgen -c playwright.bdd.config.ts && playwright test -c playwright.bdd.config.ts --ui",
-    "bddgen": "bddgen -c playwright.bdd.config.ts"
+    "test": "bddgen && playwright test",
+    "test:ui": "bddgen && playwright test --ui",
+    "bddgen": "bddgen"
   },
   "keywords": [],
   "author": "",
