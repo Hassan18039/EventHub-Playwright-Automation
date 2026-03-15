@@ -1,13 +1,19 @@
 Feature: User Registration
 
-  Scenario: New user can register and see logout
+  Background:
     Given I am on the login page
-    When I go to the register page
-    And I register with email "testing@gmail.com" and password "Testing@123"
-    Then I am logged in and see the logout button
+    And I navigate to the registration page
 
-  Scenario: Registration fails when password and confirm password do not match
-    Given I am on the login page
-    When I go to the register page
-    And I try to register with email "negative@test.com" password "Testing@123" and confirm password "WrongPass@1"
-    Then I should see error message "Passwords do not match"
+  Scenario: New user successfully registers
+    When I register with valid credentials
+    Then I am logged in
+    And I see the logout button
+
+  Scenario Outline: Registration fails for invalid input
+    When I attempt to register with email "<email>" and password "<password>" and confirm password "<confirmPassword>"
+    Then I should see error message "<errorMessage>"
+
+    Examples:
+      | email                | password       | confirmPassword  | errorMessage                   |
+      | negative@test.com    | Testing@123    | WrongPass@1      | Passwords do not match         |
+      | testing@gmail.com    | Testing@123    | Testing@123      | Email already registered       |
