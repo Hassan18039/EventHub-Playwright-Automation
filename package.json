@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "bddgen && playwright test",
-    "test:ui": "bddgen && playwright test --ui",
-    "bddgen": "bddgen"
+    "test": "playwright test",
+    "test:ui": "playwright test --ui"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +13,6 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.58.2",
-    "@types/node": "^25.3.0",
-    "playwright-bdd": "^8.5.0"
+    "@types/node": "^25.3.0"
   }
 }
