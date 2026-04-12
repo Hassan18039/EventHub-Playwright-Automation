@@ -1,0 +1,8 @@
+{
+  "validUser": {
+    "email": "testing@gmail.com",
+    "password": "Testing@123",
+    "fullName": "Testing User",
+    "phone": "1234567890"
+  }
+}

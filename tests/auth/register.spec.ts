@@ -1,19 +1,12 @@
-import { test, expect } from '@playwright/test';
-import { LoginPage } from '../../pages/auth/Login.page';
-import { RegisterPage } from '../../pages/auth/Register.page';
+import { test, expect } from '../fixtures/baseTest';
 
 test.describe('User Registration', () => {
-  let loginPage: LoginPage;
-  let registerPage: RegisterPage;
-
-  test.beforeEach(async ({ page }) => {
-    loginPage = new LoginPage(page);
-    registerPage = new RegisterPage(page);
+  test.beforeEach(async ({ loginPage }) => {
     await loginPage.navigate();
     await loginPage.clickRegisterBtn();
   });
 
-  test('New user successfully registers', async () => {
+  test('New user successfully registers', async ({ registerPage }) => {
     const uniqueEmail = 'testing@gmail.com'.replace('@', `+${Date.now()}@`);
     await registerPage.fillEmail(uniqueEmail);
     await registerPage.fillPassword('Testing@123');
@@ -28,7 +21,7 @@ test.describe('User Registration', () => {
   ];
 
   for (const { email, password, confirmPassword, errorMessage } of invalidInputs) {
-    test(`Registration fails for invalid input with email: ${email}`, async () => {
+    test(`Registration fails for invalid input with email: ${email}`, async ({ registerPage }) => {
       await registerPage.fillEmail(email);
       await registerPage.fillPassword(password);
       await registerPage.fillConfirmPassword(confirmPassword);
