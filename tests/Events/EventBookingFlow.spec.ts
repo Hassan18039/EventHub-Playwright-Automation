@@ -19,4 +19,12 @@ test.describe("Event Booking Flow", () => {
     await eventDetailsPage.clickConfirmBookingBtn();
     await eventDetailsPage.verifyBookingConfirmationText();
   });
+
+  test('User can successfully cancel a booking', async ({ eventsPage, homePage, eventDetailsPage, navBar, myBookingsPage }) => {
+    await navBar.clickMyBookingLink();
+    await myBookingsPage.clickCancelBtn();
+    await myBookingsPage.clickYesCancleItBtn();
+    await myBookingsPage.verifyCancelBookingSuccessMsg();
+
+  });
 });
