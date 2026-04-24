@@ -20,11 +20,11 @@ test.describe("Event Booking Flow", () => {
     await eventDetailsPage.verifyBookingConfirmationText();
   });
 
-  test('User can successfully cancel a booking', async ({ eventsPage, homePage, eventDetailsPage, navBar, myBookingsPage }) => {
-    await navBar.clickMyBookingLink();
-    await myBookingsPage.clickCancelBtn();
-    await myBookingsPage.clickYesCancleItBtn();
-    await myBookingsPage.verifyCancelBookingSuccessMsg();
-
-  });
+  test('System displays validation errors for required booking fields', async ({ eventsPage, homePage, eventDetailsPage }) => {
+    await homePage.clickBrowseEventsBtn();
+    await eventsPage.clickBookNowBtn();
+    await eventDetailsPage.verifyPageLoaded();
+    await eventDetailsPage.clickConfirmBookingBtn();
+    await eventDetailsPage.verifyValidationErrorMessages();
+  })
 });
