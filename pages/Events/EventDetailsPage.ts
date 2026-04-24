@@ -7,6 +7,9 @@ export class EventDetailsPage {
     readonly phoneInput: Locator;
     readonly confirmBookingBtn: Locator;
     readonly bookingConfirmationText: Locator;
+    readonly nameErrorMsg: Locator;
+    readonly emailErrorMsg: Locator;
+    readonly phoneErrorMsg: Locator;
 
 
     constructor(page: Page) {
@@ -16,6 +19,9 @@ export class EventDetailsPage {
         this.phoneInput = page.getByRole('textbox', { name: 'Phone Number*' });
         this.confirmBookingBtn = page.getByRole('button', { name: 'Confirm Booking' });
         this.bookingConfirmationText = page.getByText('Booking Confirmed!');
+        this.nameErrorMsg = page.getByText('Name must be at least 2 chars');
+        this.emailErrorMsg = page.getByText('Enter a valid email');
+        this.phoneErrorMsg = page.getByText('Enter a valid 10-digit phone');
     }
 
     async verifyPageLoaded() {
@@ -50,4 +56,9 @@ export class EventDetailsPage {
         await expect(this.bookingConfirmationText).toBeVisible();
     }
 
+    async verifyValidationErrorMessages() {
+        await expect(this.nameErrorMsg).toBeVisible();
+        await expect(this.emailErrorMsg).toBeVisible();
+        await expect(this.phoneErrorMsg).toBeVisible();
+    }
 }
