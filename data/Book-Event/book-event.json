@@ -1,0 +1,7 @@
+{
+    "invalidFormData": {
+        "email": "testing@.com",
+        "fullName": "a",
+        "phone": "123456789"
+    }
+}
