@@ -150,8 +150,22 @@ await eventDetailsPage.fillBookingDetails(
 | `data/**/*.json` | Test data (credentials, form inputs, assertions) |
 | `.github/workflows/*.yml` | CI: installs deps, runs tests, uploads reports |
 
+## Git Workflow
+
+**IMPORTANT: Never push directly to main branch**
+
+1. Create a feature branch from main: `git checkout -b feature/description`
+2. Make changes and commit with clear messages
+3. Push to your branch: `git push -u origin feature/description`
+4. Create a Pull Request on GitHub
+5. Get review and wait for CI checks to pass
+6. Merge via GitHub UI (not command line)
+
+Branch naming: `feature/add-tests`, `fix/flaky-selector`, `docs/update-guide`
+
 ## Constraints & Conventions
 
+- **Git:** Always use feature branches; never push directly to main; use PRs for all changes
 - **Selectors:** Use `getByRole`, `getByLabel`, `getByPlaceholder` for accessibility; avoid brittle xpath/css unless necessary
 - **Page Objects:** Encapsulate page-specific logic; tests call high-level methods, not selectors
 - **Test Data:** Never hardcode credentials or sensitive data in specs; use JSON files

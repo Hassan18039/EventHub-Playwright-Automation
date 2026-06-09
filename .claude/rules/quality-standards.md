@@ -122,8 +122,39 @@ Example:
 3. Check selector in codegen: `npx playwright codegen https://eventhub.rahulshettyacademy.com`
 4. Add explicit waits only if necessary
 
+## Git Workflow Standards
+
+### Branch Strategy
+- ✅ Create a feature branch from `main` before making changes
+- ✅ Push to feature branch first
+- ✅ Create a Pull Request (PR) for review
+- ✅ Merge via PR after approval
+- ❌ **Do NOT push directly to main branch** — always use PR workflow
+- ❌ Do not force-push to any shared branch
+
+### Branch Naming
+- Use descriptive names: `feature/add-payment-tests`, `fix/flaky-booking-test`
+- Pattern: `<type>/<description>`
+- Types: `feature/`, `fix/`, `test/`, `docs/`, `refactor/`
+
+### Commit Messages
+- Clear and descriptive: "Add validation tests for booking form"
+- Reference the issue/task if applicable
+- Use imperative mood: "Add" not "Added"
+
+### Pull Request Process
+1. Create branch from `main`: `git checkout -b feature/name`
+2. Make changes and commit
+3. Push to remote: `git push -u origin feature/name`
+4. Create PR on GitHub
+5. Wait for review and CI checks to pass
+6. Merge via GitHub UI (not command line)
+7. Delete branch after merge
+
 ## Code Review Checklist
 
+- [ ] Changes are on a feature branch (not main)
+- [ ] PR created for review
 - [ ] Selectors use accessible APIs
 - [ ] No hardcoded test data
 - [ ] Page objects follow POM pattern
@@ -132,3 +163,4 @@ Example:
 - [ ] Meaningful test names
 - [ ] No cross-browser compatibility issues
 - [ ] Test data properly organized in `data/` directory
+- [ ] Commit messages are clear and descriptive
