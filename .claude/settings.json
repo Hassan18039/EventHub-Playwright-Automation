@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allowlist": [
+      "bash:npm",
+      "bash:npx",
+      "bash:playwright",
+      "bash:node",
+      "bash:git",
+      "bash:ls",
+      "bash:find",
+      "bash:grep",
+      "bash:cat",
+      "bash:mkdir",
+      "bash:pwd",
+      "bash:echo",
+      "bash:test",
+      "bash:head",
+      "bash:tail"
+    ]
+  },
+  "model": "haiku",
+  "features": {
+    "codeCompletion": true,
+    "inlineActions": true
+  }
+}
