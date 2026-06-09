@@ -125,17 +125,48 @@ Example:
 ## Git Workflow Standards
 
 ### Branch Strategy
-- ✅ Create a feature branch from `main` before making changes
-- ✅ Push to feature branch first
+- ✅ Create a branch from `main` before making changes
+- ✅ Push to your branch first
 - ✅ Create a Pull Request (PR) for review
 - ✅ Merge via PR after approval
 - ❌ **Do NOT push directly to main branch** — always use PR workflow
 - ❌ Do not force-push to any shared branch
 
 ### Branch Naming
-- Use descriptive names: `feature/add-payment-tests`, `fix/flaky-booking-test`
-- Pattern: `<type>/<description>`
-- Types: `feature/`, `fix/`, `test/`, `docs/`, `refactor/`
+
+**Pattern:** `<type>/<description>`
+
+**Branch Types:**
+- `feature/` — New feature or functionality
+- `fix/` — Bug fix
+- `test/` — Test additions or improvements
+- `docs/` — Documentation updates
+- `refactor/` — Code refactoring
+- `chore/`, `perf/` — Other types as needed
+
+**Examples:**
+- `feature/add-payment-tests` — New feature
+- `fix/flaky-selector` — Bug fix
+- `test/add-edge-cases` — Test additions
+- `docs/update-guide` — Documentation
+- `refactor/simplify-pom` — Code refactoring
+
+### How Branch Type is Determined
+
+1. **If you don't specify what to do:** I ask you
+   - "What do you want me to work on?"
+   - "What's the branch name/description?"
+
+2. **I determine the type based on the work:**
+   - Are you adding tests? → `test/`
+   - Fixing a bug? → `fix/`
+   - Adding a feature? → `feature/`
+   - Updating documentation? → `docs/`
+   - Refactoring code? → `refactor/`
+
+3. **I propose the branch name:** "Should I create `test/add-validation-tests`?"
+
+4. **You approve or suggest changes:** "Yes" or "Make it `test/add-edge-cases`"
 
 ### Commit Messages
 - Clear and descriptive: "Add validation tests for booking form"
@@ -143,13 +174,15 @@ Example:
 - Use imperative mood: "Add" not "Added"
 
 ### Pull Request Process
-1. Create branch from `main`: `git checkout -b feature/name`
-2. Make changes and commit
-3. Push to remote: `git push -u origin feature/name`
-4. Create PR on GitHub
-5. Wait for review and CI checks to pass
-6. Merge via GitHub UI (not command line)
-7. Delete branch after merge
+1. Ask user what they want to work on (if not specified)
+2. Propose branch name based on work type
+3. Create branch from `main`: `git checkout -b your-branch-name`
+4. Make changes and commit with clear messages
+5. Push to remote: `git push -u origin your-branch-name`
+6. Create PR on GitHub
+7. Wait for review and CI checks to pass
+8. Merge via GitHub UI (not command line)
+9. Delete branch after merge
 
 ## Code Review Checklist
 

@@ -154,18 +154,38 @@ await eventDetailsPage.fillBookingDetails(
 
 **IMPORTANT: Never push directly to main branch**
 
-1. Create a feature branch from main: `git checkout -b feature/description`
-2. Make changes and commit with clear messages
-3. Push to your branch: `git push -u origin feature/description`
-4. Create a Pull Request on GitHub
-5. Get review and wait for CI checks to pass
-6. Merge via GitHub UI (not command line)
+When you ask me to work on something:
 
-Branch naming: `feature/add-tests`, `fix/flaky-selector`, `docs/update-guide`
+1. **If you don't specify what to do:** I ask you first
+   - "What do you want me to work on?"
+   - "What's the branch name/description?"
+
+2. **Once you tell me:** I determine the branch type based on the work
+   - Adding tests? → `test/`
+   - Fixing bugs? → `fix/`
+   - New feature? → `feature/`
+   - Updating docs? → `docs/`
+   - Refactoring? → `refactor/`
+
+3. **I propose the branch name:** "Should I create `test/add-validation-tests`?"
+
+4. **You approve or suggest changes:** "Yes" or "Make it `test/add-edge-cases`"
+
+5. Create branch: `git checkout -b your-branch-name`
+
+6. Make changes and commit with clear messages
+
+7. Push: `git push -u origin your-branch-name`
+
+8. Create PR on GitHub
+
+9. Wait for review and CI checks
+
+10. Merge via GitHub UI
 
 ## Constraints & Conventions
 
-- **Git:** Always use feature branches; never push directly to main; use PRs for all changes
+- **Git:** Always create a branch (any type: feature/fix/test/docs/refactor); never push directly to main; use PRs for all changes
 - **Selectors:** Use `getByRole`, `getByLabel`, `getByPlaceholder` for accessibility; avoid brittle xpath/css unless necessary
 - **Page Objects:** Encapsulate page-specific logic; tests call high-level methods, not selectors
 - **Test Data:** Never hardcode credentials or sensitive data in specs; use JSON files
