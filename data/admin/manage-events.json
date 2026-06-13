@@ -1,0 +1,68 @@
+{
+  "adminUser": {
+    "email": "testing@gmail.com",
+    "password": "Testing@123"
+  },
+  "validEvent": {
+    "title": "Tech Conference 2026",
+    "description": "Annual technology conference featuring industry leaders and latest innovations",
+    "category": "Conference",
+    "city": "Bangalore",
+    "venue": "Convention Center, Whitefield",
+    "dateTime": "2026-12-25T09:00",
+    "price": "1500",
+    "seats": "500",
+    "imageUrl": "https://images.unsplash.com/photo-1540575467063-178cb50230e7"
+  },
+  "validEventFestival": {
+    "title": "Summer Music Festival 2026",
+    "description": "Three-day music festival featuring international artists",
+    "category": "Festival",
+    "city": "Hyderabad",
+    "venue": "Hitech City Grounds",
+    "dateTime": "2026-06-15T17:00",
+    "price": "2000",
+    "seats": "2000",
+    "imageUrl": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea"
+  },
+  "invalidEventMissingTitle": {
+    "title": "",
+    "description": "Annual technology conference",
+    "category": "Conference",
+    "city": "Bangalore",
+    "venue": "Convention Center",
+    "dateTime": "2026-12-25T09:00",
+    "price": "1500",
+    "seats": "500"
+  },
+  "invalidEventMissingDescription": {
+    "title": "Tech Conference 2026",
+    "description": "",
+    "category": "Conference",
+    "city": "Bangalore",
+    "venue": "Convention Center",
+    "dateTime": "2026-12-25T09:00",
+    "price": "1500",
+    "seats": "500"
+  },
+  "invalidEventZeroPrice": {
+    "title": "Tech Conference 2026",
+    "description": "Annual technology conference",
+    "category": "Conference",
+    "city": "Bangalore",
+    "venue": "Convention Center",
+    "dateTime": "2026-12-25T09:00",
+    "price": "0",
+    "seats": "500"
+  },
+  "invalidEventZeroSeats": {
+    "title": "Tech Conference 2026",
+    "description": "Annual technology conference",
+    "category": "Conference",
+    "city": "Bangalore",
+    "venue": "Convention Center",
+    "dateTime": "2026-12-25T09:00",
+    "price": "1500",
+    "seats": "0"
+  }
+}

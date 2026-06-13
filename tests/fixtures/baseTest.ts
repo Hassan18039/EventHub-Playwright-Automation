@@ -6,6 +6,7 @@ import { EventsPage } from '../../pages/Events/EventsPage';
 import { EventDetailsPage } from '../../pages/Events/EventDetailsPage';
 import { NavBar } from '../../pages/NavBar/NavBar';
 import { MyBookingsPage } from '../../pages/MyBookings/myBookings';
+import { ManageEventsPage } from '../../pages/admin/ManageEventsPage.page';
 
 type CustomFixtures = {
   loginPage: LoginPage;
@@ -15,6 +16,7 @@ type CustomFixtures = {
   eventDetailsPage: EventDetailsPage;
   navBar: NavBar;
   myBookingsPage: MyBookingsPage;
+  manageEventsPage: ManageEventsPage;
 };
 
 // Extend base test by providing our page objects automatically to all tests.
@@ -39,6 +41,9 @@ export const test = base.extend<CustomFixtures>({
   },
   myBookingsPage: async ({ page }, use) => {
     await use(new MyBookingsPage(page));
+  },
+  manageEventsPage: async ({ page }, use) => {
+    await use(new ManageEventsPage(page));
   },
 });
 
