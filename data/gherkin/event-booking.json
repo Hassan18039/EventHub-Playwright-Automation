@@ -1,0 +1,81 @@
+{
+  "validBooking": {
+    "fullName": "John Doe",
+    "email": "john@test.com",
+    "phone": "9876543210",
+    "quantity": 1,
+    "expectedPrice": "100"
+  },
+  "bulkBooking": {
+    "fullName": "Jane Smith",
+    "email": "jane@test.com",
+    "phone": "9876543211",
+    "quantity": 5,
+    "expectedPrice": "500"
+  },
+  "invalidBookingData": {
+    "fullName": "A",
+    "email": "invalid-email",
+    "phone": "123",
+    "quantity": 0
+  },
+  "bookingWithPromoCode": {
+    "fullName": "Promo User",
+    "email": "promo@test.com",
+    "phone": "9876543212",
+    "quantity": 2,
+    "promoCode": "SAVE20",
+    "discountPercent": 20,
+    "expectedPrice": "160"
+  },
+  "expiredPromoCode": {
+    "fullName": "Expired Promo",
+    "email": "expired@test.com",
+    "phone": "9876543213",
+    "quantity": 1,
+    "promoCode": "EXPIRED2024",
+    "expectedError": "Promo code expired"
+  },
+  "bookingAmendment": {
+    "originalQuantity": 1,
+    "newQuantity": 3,
+    "originalPrice": "100",
+    "newPrice": "300"
+  },
+  "bookingCancellation": {
+    "fullName": "Cancel User",
+    "email": "cancel@test.com",
+    "phone": "9876543214",
+    "quantity": 2,
+    "cancellationReason": "Schedule conflict"
+  },
+  "multipleEventBooking": {
+    "events": [
+      {
+        "eventName": "Tech Conference",
+        "quantity": 1,
+        "price": "100"
+      },
+      {
+        "eventName": "Music Festival",
+        "quantity": 2,
+        "price": "200"
+      }
+    ],
+    "totalPrice": "300"
+  },
+  "bookingWithMissingPhone": {
+    "fullName": "No Phone User",
+    "email": "nophone@test.com",
+    "phone": "",
+    "quantity": 1,
+    "expectedError": "Phone number is required"
+  },
+  "maxQuantityExceeded": {
+    "fullName": "Max User",
+    "email": "maxuser@test.com",
+    "phone": "9876543215",
+    "quantity": 100,
+    "expectedError": "Maximum quantity is 10"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "feature": "User Authentication",
+  "featureFile": "user-authentication",
+  "timestamp": "2026-06-14T16:30:00Z",
+  "executionMode": "AUTO (tagged scenarios only)",
+  "totalScenarios": 5,
+  "executed": 1,
+  "skipped": 4,
+  "passed": 1,
+  "failed": 0,
+  "duration": 83.8,
+  "results": [
+    {
+      "scenario": "User successfully authenticates with valid credentials",
+      "tags": ["@regression"],
+      "status": "PASSED",
+      "duration": 83.8,
+      "steps": [
+        {
+          "step": "Navigate to https://eventhub.rahulshettyacademy.com",
+          "status": "PASSED"
+        },
+        {
+          "step": "Fill email: testing@gmail.com",
+          "status": "PASSED"
+        },
+        {
+          "step": "Fill password: Testing@123",
+          "status": "PASSED"
+        },
+        {
+          "step": "Click Sign In button",
+          "status": "PASSED"
+        },
+        {
+          "step": "Verify user authenticated (home page visible)",
+          "status": "PASSED"
+        },
+        {
+          "step": "Verify Logout option in top navigation",
+          "status": "PASSED"
+        }
+      ],
+      "testUrl": "https://test-manager.lambdatest.com/projects/01KV2N578T8FK72JTBB4FQPVC8/test-cases/01KV307MDKKXE993J52GNFS07M/dashboard/share/US_5LX5D5XRPMKS5KMO3PP0GC0MC10MSF6Z1JR0IAZHSXEFUFAHEET4OBI7YV425OKP",
+      "finalState": {
+        "url": "https://eventhub.rahulshettyacademy.com/",
+        "authenticated": true,
+        "homePageAccessible": true,
+        "logoutAvailable": true
+      }
+    }
+  ],
+  "skippedScenarios": [
+    "User can create a new account (untagged)",
+    "System validates email format during login (untagged)",
+    "System validates required fields during login (untagged)",
+    "User can logout from the application (untagged)"
+  ],
+  "summary": "1 regression test executed successfully. All verifications passed. User authentication flow works correctly with valid credentials."
+}

@@ -1,0 +1,13 @@
+{
+  "baseUrl": "https://eventhub.rahulshettyacademy.com",
+  "credentials": {
+    "email": "testing@gmail.com",
+    "password": "Testing@123"
+  },
+  "browser": "chromium",
+  "headless": false,
+  "timeout": 600,
+  "maxSteps": 100,
+  "screenshots": true,
+  "reportPath": "./gherkin-reports"
+}

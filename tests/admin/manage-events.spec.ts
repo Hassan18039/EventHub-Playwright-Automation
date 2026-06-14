@@ -30,6 +30,7 @@ test.describe("Admin Manage Events", () => {
     await manageEventsPage.fillEventDetails(eventData.invalidEventMissingTitle);
     await manageEventsPage.clickAddEventBtn();
 
+    
     const errorMessage = page.locator('[class*="error"], [role="alert"]');
     await expect(errorMessage).toBeVisible();
   });

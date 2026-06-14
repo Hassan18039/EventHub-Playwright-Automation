@@ -5,7 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
-    "test:ui": "playwright test --ui"
+    "test:ui": "playwright test --ui",
+    "gherkin": "node scripts/gherkin-executor.js",
+    "gherkin:auth": "node scripts/gherkin-executor.js user-authentication --timeout 600",
+    "gherkin:booking": "node scripts/gherkin-executor.js event-booking --timeout 600",
+    "gherkin:events": "node scripts/gherkin-executor.js event-browsing --timeout 600",
+    "gherkin:validation": "node scripts/gherkin-executor.js form-validation --timeout 600",
+    "gherkin:bookings": "node scripts/gherkin-executor.js my-bookings --timeout 600",
+    "gherkin:all": "node scripts/gherkin-executor.js user-authentication --timeout 600 && node scripts/gherkin-executor.js event-booking --timeout 600",
+    "gherkin:headless": "node scripts/gherkin-executor.js user-authentication --headless --timeout 600"
   },
   "keywords": [],
   "author": "",

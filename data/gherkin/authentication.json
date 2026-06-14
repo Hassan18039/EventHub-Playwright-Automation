@@ -1,0 +1,55 @@
+{
+  "validLogin": {
+    "email": "testing@gmail.com",
+    "password": "Testing@123"
+  },
+  "validRegistration": {
+    "fullName": "John Doe",
+    "email": "johndoe@test.com",
+    "password": "TestPass@123",
+    "confirmPassword": "TestPass@123",
+    "phone": "9876543210"
+  },
+  "invalidEmail": {
+    "email": "invalid-email",
+    "password": "Testing@123"
+  },
+  "validPassword": {
+    "password": "Testing@123"
+  },
+  "emptyFields": {
+    "email": "",
+    "password": ""
+  },
+  "passwordMismatch": {
+    "fullName": "Jane Smith",
+    "email": "jane@test.com",
+    "password": "TestPass@123",
+    "confirmPassword": "DifferentPass@123"
+  },
+  "shortPassword": {
+    "fullName": "Bob Wilson",
+    "email": "bob@test.com",
+    "password": "123",
+    "confirmPassword": "123"
+  },
+  "newUserCredentials": {
+    "fullName": "New User",
+    "email": "newuser@test.com",
+    "password": "NewPass@123",
+    "confirmPassword": "NewPass@123"
+  },
+  "invalidPassword": {
+    "email": "testing@gmail.com",
+    "password": "wrongpassword"
+  },
+  "nonExistentUser": {
+    "email": "nonexistent@test.com",
+    "password": "Testing@123"
+  },
+  "validUser": {
+    "email": "testing@gmail.com",
+    "password": "Testing@123",
+    "fullName": "Testing User"
+  }
+}

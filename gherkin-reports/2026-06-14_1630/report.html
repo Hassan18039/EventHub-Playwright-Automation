@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gherkin Test Report - 2026-06-14 16:30</title>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+    .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; text-align: center; }
+    .header h1 { font-size: 36px; margin-bottom: 10px; font-weight: 600; }
+    .header p { font-size: 16px; opacity: 0.95; }
+    .timestamp { font-size: 12px; opacity: 0.8; margin-top: 15px; }
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 30px; background: #f8f9fa; border-bottom: 2px solid #e9ecef; }
+    .summary-card { padding: 25px; border-radius: 8px; text-align: center; background: white; border-left: 5px solid #dee2e6; }
+    .summary-card.passed { border-left-color: #28a745; background: #f0f8f4; }
+    .summary-card h3 { font-size: 48px; font-weight: 700; margin: 10px 0; color: #28a745; }
+    .summary-card p { font-size: 14px; color: #666; font-weight: 500; }
+    .content { padding: 40px; }
+    .scenario { margin-bottom: 30px; border: 2px solid #e9ecef; border-radius: 8px; overflow: hidden; border-left: 8px solid #28a745; background: #f8fff9; }
+    .scenario-header { padding: 20px; background: #f8f9fa; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e9ecef; }
+    .scenario-title h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+    .scenario-title .status { font-weight: 700; font-size: 14px; color: #28a745; }
+    .scenario-meta { text-align: right; }
+    .scenario-meta .duration { font-size: 16px; font-weight: 600; color: #666; }
+    .scenario-meta .tags { margin-top: 8px; }
+    .tag { display: inline-block; background: #007bff; color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px; margin-left: 8px; font-weight: 500; }
+    .scenario-body { padding: 25px; }
+    .test-link { margin: 15px 0; }
+    .test-link a { color: #007bff; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; }
+    .test-link a:hover { text-decoration: underline; }
+    .steps { margin: 15px 0; padding: 15px; background: #f8f9fa; border-radius: 6px; }
+    .steps ul { margin-left: 20px; margin-top: 10px; color: #666; }
+    .steps li { margin: 5px 0; }
+    .state-info { background: #f8f9fa; padding: 15px; border-radius: 6px; margin-top: 15px; font-size: 12px; color: #666; }
+    .state-info strong { color: #333; }
+    .skipped { background: #f5f5f5; padding: 20px; border-radius: 6px; color: #666; margin: 20px 0; }
+    .skipped p { margin: 8px 0; }
+    .footer { padding: 25px; background: #f8f9fa; border-top: 2px solid #e9ecef; text-align: center; color: #666; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🧪 Gherkin Test Report</h1>
+      <p>EventHub - User Authentication</p>
+      <div class="timestamp">Executed: 2026-06-14 at 16:30 UTC • Real Browser with Kane-CLI</div>
+    </div>
+
+    <div class="summary">
+      <div class="summary-card passed">
+        <h3>1</h3>
+        <p>Passed ✅</p>
+      </div>
+      <div class="summary-card">
+        <h3>0</h3>
+        <p>Failed</p>
+      </div>
+      <div class="summary-card">
+        <h3>1 of 5</h3>
+        <p>Executed (4 Skipped)</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2 style="margin-bottom: 20px;">Executed Scenarios</h2>
+
+      <div class="scenario">
+        <div class="scenario-header">
+          <div class="scenario-title">
+            <h3>✅ User successfully authenticates with valid credentials</h3>
+            <div class="status">PASSED</div>
+          </div>
+          <div class="scenario-meta">
+            <div class="duration">⏱️ 83.8 seconds</div>
+            <div class="tags"><span class="tag">@regression</span></div>
+          </div>
+        </div>
+        <div class="scenario-body">
+          <div class="steps">
+            <strong>Steps Executed:</strong>
+            <ul>
+              <li>✅ Navigate to https://eventhub.rahulshettyacademy.com</li>
+              <li>✅ Fill email: testing@gmail.com</li>
+              <li>✅ Fill password: Testing@123</li>
+              <li>✅ Click Sign In button</li>
+              <li>✅ Verify user authenticated (home page visible)</li>
+              <li>✅ Verify Logout option in top navigation</li>
+            </ul>
+          </div>
+
+          <div class="test-link">
+            <a href="https://test-manager.lambdatest.com/projects/01KV2N578T8FK72JTBB4FQPVC8/test-cases/01KV307MDKKXE993J52GNFS07M/dashboard/share/US_5LX5D5XRPMKS5KMO3PP0GC0MC10MSF6Z1JR0IAZHSXEFUFAHEET4OBI7YV425OKP?type=summary&agentView=true&fqdn=summary-page" target="_blank">
+              📊 View Full Test Report on LambdaTest →
+            </a>
+          </div>
+
+          <div class="state-info">
+            <strong>Final State:</strong><br>
+            URL: https://eventhub.rahulshettyacademy.com/<br>
+            User Authenticated: ✅ true<br>
+            Home Page Accessible: ✅ true<br>
+            Logout Available: ✅ true
+          </div>
+        </div>
+      </div>
+
+      <h2 style="margin: 30px 0 20px;">Skipped Scenarios (Untagged)</h2>
+      <div class="skipped">
+        <p><strong>Auto-filter Mode:</strong> Only TAGGED scenarios were executed. 4 untagged scenarios were skipped.</p>
+        <p style="margin-top: 15px;">To run all scenarios: <code>/gherkin authentication all</code></p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+          <li>⏭️ User can create a new account</li>
+          <li>⏭️ System validates email format during login</li>
+          <li>⏭️ System validates required fields during login</li>
+          <li>⏭️ User can logout from the application</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><strong>Gherkin Executor</strong> • Powered by Kane-CLI + EventHub</p>
+      <p>Real Browser Automation • Timestamped Report</p>
+    </div>
+  </div>
+</body>
+</html>
