@@ -1,0 +1,19 @@
+{
+  "feature": "user-authentication",
+  "filter": "@regression",
+  "timestamp": "2026-06-15_1240",
+  "scenarios": [
+    {
+      "name": "User successfully authenticates with valid credentials",
+      "tags": ["@regression"],
+      "status": "passed",
+      "duration": 110.7,
+      "test_url": "https://test-manager.lambdatest.com/projects/01KV2N578T8FK72JTBB4FQPVC8/test-cases/01KV549TV9E7MHXAMGSMW22RTK/dashboard/share/US_4F2AZUS0A3QUUDSI73O52N8Y1O2WMY2HF0S6E4G7C1SHIUJPI1DJPL44TMGQ4GK9?type=summary&agentView=true&fqdn=summary-page",
+      "summary": "Opened the EventHub login page and signed in using the provided email and password. Reached the EventHub home page successfully. Verified Logout link visible in top navigation."
+    }
+  ],
+  "passed": 1,
+  "failed": 0,
+  "total": 1,
+  "skipped": 4
+}
