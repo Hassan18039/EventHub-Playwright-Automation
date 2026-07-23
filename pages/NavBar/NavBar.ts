@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+import { expect, Locator, Page } from "@playwright/test";
 
 export class NavBar {
     private page: Page;
@@ -9,6 +9,7 @@ export class NavBar {
     readonly adminBtn: Locator
     readonly manageEvents: Locator
     readonly manageBookings: Locator
+    readonly logOutBtn: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -19,6 +20,7 @@ export class NavBar {
         this.adminBtn = page.getByRole('button', { name: 'Admin' })
         this.manageEvents = page.locator('a').filter({ hasText: 'Manage Events' }).last();
         this.manageBookings = page.getByRole('link', { name: 'Manage Bookings' })
+        this.logOutBtn = page.getByRole('button', { name: 'Logout' });
     }
 
     async clickHomeLink() {
@@ -43,6 +45,10 @@ export class NavBar {
 
     async clickManageBookings() {
         await this.manageBookings.click();
+    }
+
+    async clickLogoutBtn() {
+        await expect(this.logOutBtn).toBeVisible();
     }
 
 }

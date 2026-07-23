@@ -8,12 +8,16 @@ export class HomePage {
 
     constructor(page: Page) {
         this.page = page;
-        this.browseEventsBtn = page.getByText('Browse Events →', { exact: true })
+        this.browseEventsBtn = page.getByText('Browse Events →', { exact: true });
 
     }
 
     async clickBrowseEventsBtn() {
         await this.browseEventsBtn.click();
+    }
+
+    async verifyPageLoaded() {
+        await expect(this.page).toHaveURL(/eventhub\.rahulshettyacademy\.com\/?$/);
     }
 
 }
