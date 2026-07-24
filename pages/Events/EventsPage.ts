@@ -11,7 +11,7 @@ export class EventsPage {
         this.page = page;
         this.eventsPageTitle = page.getByText('Upcoming Events', { exact: true })
         this.bookNowBtn = page.getByRole('link', { name: 'Book Now' }).first();
-        this.eventCategoryLable = page.getByText('Festival', { exact: true })
+        this.eventCategoryLable = page.getByText('Festival', { exact: true }).first();
     }
 
     async verifyEventsPageTitle() {

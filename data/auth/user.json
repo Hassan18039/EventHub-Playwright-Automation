@@ -11,5 +11,12 @@
     "password": "Invalid@123",
     "fullName": "Invalid User",
     "phone": "0987654321"
+  },
+
+  "invalidEmailFormatAndShortPassword": {
+    "email": "invalidemail",
+    "password": "Testing@123",
+    "shortPassword": "123"
   }
+
 }
