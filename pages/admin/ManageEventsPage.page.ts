@@ -12,6 +12,11 @@ export class ManageEventsPage {
   readonly totalSeatsInput: Locator;
   readonly imageUrlInput: Locator;
   readonly addEventBtn: Locator;
+  readonly titleErrorMessage: Locator;
+  readonly totalSeatsErrorMessage: Locator;
+  readonly successToast: Locator;
+  readonly deleteEventBtn: Locator;
+  readonly eventDeletedToast: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -25,6 +30,18 @@ export class ManageEventsPage {
     this.totalSeatsInput = page.getByPlaceholder('e.g. 500');
     this.imageUrlInput = page.getByRole('textbox', { name: 'Image URL (optional)' });
     this.addEventBtn = page.getByRole('button', { name: 'Add Event' });
+    this.titleErrorMessage = page.getByText('Title is required', { exact: true })
+    this.totalSeatsErrorMessage = page.getByText('Must have at least 1 seat', { exact: true });
+    this.successToast = page.getByText('Event created!', { exact: true });
+    this.deleteEventBtn = page.getByRole('button', { name: 'Delete' }).first();
+    this.eventDeletedToast = page.getByText('Event deleted', { exact: true });
+
+  }
+
+  // Row in the "All Events" table for a given event title. Uses first() because
+  // the app keeps up to 6 events, so repeated runs can leave same-titled rows.
+  eventRow(title: string): Locator {
+    return this.page.getByRole('row').filter({ hasText: title }).first();
   }
 
   async navigateToManageEvents() {
@@ -99,5 +116,11 @@ export class ManageEventsPage {
   async verifyPageLoaded() {
     await expect(this.page).toHaveURL(/.*admin\/events/);
     await expect(this.page.getByText('New Event')).toBeVisible();
+  }
+
+  async deleteEvent() {
+    await this.deleteEventBtn.click();
+    await this.page.getByRole('button', { name: 'Delete event' }).click();
+    await expect(this.eventDeletedToast).toBeVisible();
   }
 }
