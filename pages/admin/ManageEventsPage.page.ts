@@ -147,6 +147,9 @@ export class ManageEventsPage {
   async clickEditBtn(title: string) {
     await this.eventRow(title).getByRole('button', { name: 'Edit' }).click();
     await expect(this.editEventHeading).toBeVisible();
+    // Wait for the form to be prefilled, otherwise a field cleared right away
+    // can be overwritten by the late prefill (seen flaky in CI)
+    await expect(this.titleInput).toHaveValue(title);
   }
 
   // Fills only the fields passed in, leaving the rest of the prefilled form as-is
