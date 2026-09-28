@@ -6,6 +6,9 @@ export class MyBookingsPage {
     readonly yesCancleItBtn: Locator
     readonly cancelBookingSuccessMsg: Locator
     readonly viewDetailsBtn: Locator
+    readonly editButton: Locator
+    readonly updateButton: Locator
+    readonly cancelEventButton: Locator
 
     constructor(page: Page) {
         this.page = page;
@@ -13,6 +16,9 @@ export class MyBookingsPage {
         this.yesCancleItBtn = page.getByRole('button', { name: 'Yes, cancel it' });
         this.cancelBookingSuccessMsg = page.getByText('Booking cancelled successfully');
         this.viewDetailsBtn = page.getByRole('button', { name: 'View Details' }).first();
+        this.editButton = page.getByRole('button', { name: 'Edit' }).first();
+        this.updateButton = page.getByRole('button', { name: '💾 Update Event' });
+        this.cancelEventButton = page.getByRole('button', { name: 'Cancel edit' });
     }
 
     async clickCancelBtn() {
@@ -28,5 +34,15 @@ export class MyBookingsPage {
     async clickViewDetails() {
         await this.viewDetailsBtn.first().click();
         await expect(this.page).toHaveURL(/\/bookings\/\d+/);
+    }
+    async clickEditButton() {
+        await this.editButton.click();
+    }
+
+    async clickUpdateButton() {
+        await this.updateButton.click();
+    }
+    async clickCancelEventButton() {
+        await this.cancelEventButton.click();
     }
 }

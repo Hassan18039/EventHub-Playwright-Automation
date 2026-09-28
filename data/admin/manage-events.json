@@ -1,7 +1,39 @@
 {
   "adminUser": {
-    "email": "testing@gmail.com",
+    "email": "hassan.inspect.1790611981@test.com",
     "password": "Testing@123"
+  },
+  "editEvent": {
+    "title": "Edit Me Conference 2026",
+    "description": "Event created to be edited by the admin",
+    "category": "Conference",
+    "city": "Bangalore",
+    "venue": "Convention Center, Whitefield",
+    "dateTime": "2026-12-25T09:00",
+    "price": "1500",
+    "seats": "500",
+    "imageUrl": "https://images.unsplash.com/photo-1540575467063-178cb50230e7"
+  },
+  "editEventUpdates": {
+    "category": "Festival",
+    "city": "Hyderabad",
+    "venue": "Hitech City Grounds",
+    "dateTime": "2027-01-10T18:00",
+    "price": "2000",
+    "seats": "750",
+    "expectedPrice": "$2,000",
+    "expectedDate": "10 Jan 2027",
+    "expectedTotalSeats": "/750"
+  },
+  "deleteEvent": {
+    "title": "Delete Me Workshop",
+    "description": "Event created to be deleted by the admin",
+    "category": "Workshop",
+    "city": "Pune",
+    "venue": "Tech Park",
+    "dateTime": "2026-11-20T10:00",
+    "price": "500",
+    "seats": "50"
   },
   "validEvent": {
     "title": "Tech Conference 2026",
