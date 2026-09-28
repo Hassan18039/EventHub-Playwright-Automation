@@ -41,6 +41,14 @@ Tests receive page objects as fixture parameters; no manual instantiation needed
 - `tests/Events/` — Event booking flow tests (success paths, validation, edge cases)
 - `tests/fixtures/` — Shared test setup (baseTest, hooks)
 
+### Authentication (storageState)
+`tests/auth.setup.ts` runs as the `setup` project before `chromium`, logs in once as `validUser` and `adminUser`, and saves the sessions to `playwright/.auth/` (gitignored). Specs that need a logged-in user skip the login form:
+```typescript
+import { AUTH_STATE } from "../fixtures/authState";
+test.use({ storageState: AUTH_STATE.admin }); // or AUTH_STATE.user
+```
+Tests under `tests/auth/` exercise login/registration themselves, so they must not use a saved session.
+
 ### Test Data
 `data/` directory stores test inputs (JSON files grouped by domain):
 - `data/auth/user.json` — Credential and user profile data

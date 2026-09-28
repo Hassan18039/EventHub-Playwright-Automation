@@ -1,11 +1,13 @@
 import { test, expect } from "../fixtures/baseTest";
 import eventData from "../../data/admin/manage-events.json";
+import { AUTH_STATE } from "../fixtures/authState";
 
 test.describe("Admin Add Event", () => {
-  test.beforeEach(async ({ loginPage, navBar, manageEventsPage }) => {
-    // Login as admin, then open the Manage Events screen
-    await loginPage.navigate();
-    await loginPage.login(eventData.adminUser.email, eventData.adminUser.password);
+  test.use({ storageState: AUTH_STATE.admin });
+
+  test.beforeEach(async ({ homePage, navBar, manageEventsPage }) => {
+    // Start logged in as admin, then open the Manage Events screen
+    await homePage.navigate();
     await navBar.clickAdminBtn();
     await navBar.clickManageEvents();
     await manageEventsPage.verifyPageLoaded();

@@ -1,14 +1,16 @@
 import { test, expect } from "../fixtures/baseTest";
 import eventData from "../../data/admin/manage-events.json";
+import { AUTH_STATE } from "../fixtures/authState";
 
 test.describe("Admin Edit Event", () => {
+  test.use({ storageState: AUTH_STATE.admin });
+
   // Each test creates its own uniquely-titled event so parallel tests never edit each other's data
   let event: typeof eventData.editEvent;
   let currentTitle: string;
 
-  test.beforeEach(async ({ loginPage, navBar, manageEventsPage }) => {
-    await loginPage.navigate();
-    await loginPage.login(eventData.adminUser.email, eventData.adminUser.password);
+  test.beforeEach(async ({ homePage, navBar, manageEventsPage }) => {
+    await homePage.navigate();
     await navBar.clickAdminBtn();
     await navBar.clickManageEvents();
     await manageEventsPage.verifyPageLoaded();
