@@ -1,7 +1,7 @@
 import { test, expect } from "../fixtures/baseTest";
 import eventData from "../../data/admin/manage-events.json";
 
-test.describe("Admin Manage Events", () => {
+test.describe("Admin Add Event", () => {
   test.beforeEach(async ({ loginPage, navBar, manageEventsPage }) => {
     // Login as admin, then open the Manage Events screen
     await loginPage.navigate();
@@ -64,9 +64,5 @@ test.describe("Admin Manage Events", () => {
     await manageEventsPage.clickAddEventBtn();
 
     await expect(manageEventsPage.eventRow(eventWithoutImage.title)).toBeVisible();
-  });
-
-  test("Admin can delete an event", async ({ manageEventsPage }) => {
-    await manageEventsPage.deleteEvent();
   });
 });
