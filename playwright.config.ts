@@ -12,6 +12,8 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    // Logs in once and saves sessions to playwright/.auth/ (see tests/auth.setup.ts)
+    { name: 'setup', testMatch: /.*\.setup\.ts/ },
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] }, dependencies: ['setup'] },
   ],
 });

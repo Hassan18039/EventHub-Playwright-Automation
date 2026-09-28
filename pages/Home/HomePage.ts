@@ -12,6 +12,11 @@ export class HomePage {
 
     }
 
+    async navigate() {
+        await this.page.goto('/');
+        await this.verifyPageLoaded();
+    }
+
     async clickBrowseEventsBtn() {
         await this.browseEventsBtn.click();
     }
