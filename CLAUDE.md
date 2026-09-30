@@ -17,6 +17,8 @@ The `pages/` directory organizes page classes by domain/feature area:
 - `pages/Events/` — EventsPage, EventDetailsPage
 - `pages/MyBookings/` — MyBookingsPage
 - `pages/NavBar/` — NavBar component
+- `pages/admin/ManageEvents/` — ManageEventsPage (admin add/edit/delete events)
+- `pages/admin/ManageBookings/` — ManageBookingsPage (admin bookings list, view, cancel, status filter)
 
 Each page object:
 - Encapsulates page selectors and interactions
@@ -39,6 +41,8 @@ Tests receive page objects as fixture parameters; no manual instantiation needed
 ### Test Organization
 - `tests/auth/` — Authentication tests (login, registration)
 - `tests/Events/` — Event booking flow tests (success paths, validation, edge cases)
+- `tests/admin/manage-events/` — Admin add/edit/delete event tests
+- `tests/admin/manage-bookings/` — Admin Manage Bookings tests (run in one worker; they share the admin account's bookings list)
 - `tests/fixtures/` — Shared test setup (baseTest, hooks)
 
 ### Authentication (storageState)
