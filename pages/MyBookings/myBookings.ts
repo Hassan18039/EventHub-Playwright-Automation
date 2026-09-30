@@ -21,6 +21,16 @@ export class MyBookingsPage {
         this.cancelEventButton = page.getByRole('button', { name: 'Cancel edit' });
     }
 
+    async navigate() {
+        await this.page.goto('/bookings');
+        await expect(this.page.getByRole('heading', { name: 'My Bookings' })).toBeVisible();
+    }
+
+    // Booking ref badge on a booking card, e.g. "D-2HZKJH"
+    bookingRefText(ref: string): Locator {
+        return this.page.getByText(ref, { exact: true });
+    }
+
     async clickCancelBtn() {
         await this.cancelBtn.click();
     }

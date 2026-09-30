@@ -1,6 +1,6 @@
-import { test, expect } from "../fixtures/baseTest";
-import eventData from "../../data/admin/manage-events.json";
-import { AUTH_STATE } from "../fixtures/authState";
+import { test, expect } from "../../fixtures/baseTest";
+import eventData from "../../../data/admin/manage-events.json";
+import { AUTH_STATE } from "../../fixtures/authState";
 
 test.describe("Admin Edit Event", () => {
   test.use({ storageState: AUTH_STATE.admin });

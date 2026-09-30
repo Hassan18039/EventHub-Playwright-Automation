@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "eventId": 284,
+    "eventTitle": "Hollywood Monsoon Night — Los Angeles",
+    "eventCity": "Los Angeles",
+    "fullName": "Bookings Admin Test",
+    "email": "bookings.admin@test.com",
+    "phone": "9876543210",
+    "quantity": 2,
+    "expectedTotal": "$5,000",
+    "expectedStatus": "confirmed"
+  }
+}
